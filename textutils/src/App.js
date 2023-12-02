@@ -1,7 +1,9 @@
 
 import './App.css';
 import React, { useState } from 'react';
-// import About from './components/About';
+import  ReactDOM from 'react';
+import { BrowserRouter, Routes, Route, Router } from "react-router-dom";
+import About from './components/About';
 import Navbar from './components/navbar';
 import TextForm from './components/TextForm';
 function App() {
@@ -17,16 +19,13 @@ function App() {
     }
   }
   return (
-   <>
-
+   <BrowserRouter>
 <Navbar title="Text Utils" mode={mode} toggleMode={toggleMode}/>
-<div className="container my-4">
-<TextForm heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/>
-
-{/* <About mode={mode}/> */}
-  
-</div>
-   </>
+   <Routes>
+    <Route path='/' element= {<TextForm heading="Try TextUtils - word counter, character counter, remove extra spaces" mode={mode}/>} />
+    <Route path='/about' element= {<About mode={mode}/>} />
+</Routes>
+   </BrowserRouter>
   );
 }
 

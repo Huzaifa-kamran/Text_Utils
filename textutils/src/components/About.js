@@ -49,6 +49,7 @@ export default function About(props) {
     //  useEffects()
   return (
     <>
+    <div className="container my-4">
     <div className="accordion" id="accordionExample" >
     <div className="accordion-item" style={myStyle}>
       <h2 className="accordion-header" id="headingOne">
@@ -88,6 +89,7 @@ export default function About(props) {
         </div>
       </div>
     </div>
+  </div>
   </div>
   {/* <div className='container m-3'>
     <button className={`btn ${btnClass}`} onClick={toggleTheme}>{btnText}</button>

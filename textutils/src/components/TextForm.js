@@ -37,6 +37,7 @@ export default function TextForm(props) {
 
 
   return (
+    <div className="container my-4">
     <div className="mb-3" style={{color: props.mode === "dark"? "#fff":"#000"}}>
     <h3 className={`${props.mode === "light"? "text-dark":"text-light"}`}>{props.heading}</h3>
     <textarea placeholder='Enter Text Here' className={`form-control ${props.mode === "dark"? "bg-dark text-light" : "bg-light text-dark"}`} 
@@ -55,6 +56,7 @@ export default function TextForm(props) {
        <h3>Preview</h3>
        <p>{text.length>0?text:"Nothing to preview!"}</p>
     </div>
+  </div>
   </div>
   )
 }
