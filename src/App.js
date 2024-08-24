@@ -18,7 +18,7 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <Navbar title="Text Utils By Huzaifa" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="Text Utils" mode={mode} toggleMode={toggleMode} />
       <Routes>
         <Route
           path="/"
