@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
-
+  console.log(props.theme)
   const textUp = () => {
   // console.log(text);
   let newText = text.toUpperCase();
@@ -43,11 +43,11 @@ export default function TextForm(props) {
     <textarea placeholder='Enter Text Here' className={`form-control ${props.mode === "dark"? "bg-dark text-light" : "bg-light text-dark"}`} 
     value={text} onChange={changeVal} id="exampleFormControlTextarea1" rows="8"></textarea>
     <div className='my-4'>
-    <button className='btn btn-outline-info mx-2' id='uper' onClick={textUp}>Uppercase </button>
-    <button className='btn btn-outline-info mx-2' onClick={textLow}>Lowercase </button>
-    <button className='btn btn-outline-info mx-2' onClick={textClear}>Clear Text </button>
-    <button className='btn btn-outline-info mx-2' onClick={textCopy}>Copy Text </button>
-    <button className='btn btn-outline-info mx-2' onClick={removeExtraSpace}>Remove Extra Space</button>
+    <button className={`btn btn-outline-${props.theme} mx-2`} id='uper' onClick={textUp}>Uppercase </button>
+    <button className={`btn btn-outline-${props.theme} mx-2`} onClick={textLow}>Lowercase </button>
+    <button className={`btn btn-outline-${props.theme} mx-2`} onClick={textClear}>Clear Text </button>
+    <button className={`btn btn-outline-${props.theme} mx-2`} onClick={textCopy}>Copy Text </button>
+    <button className={`btn btn-outline-${props.theme} mx-2`} onClick={removeExtraSpace}>Remove Extra Space</button>
     </div>
     <div className='container'>
        <h3>Your Text Summary</h3>
@@ -62,7 +62,8 @@ export default function TextForm(props) {
 }
 
 TextForm.propTypes = {
-    heading: PropTypes.string.isRequired
+    heading: PropTypes.string.isRequired,
+    theme: PropTypes.string.isRequired,
   };
 
 TextForm.defaultProps = {

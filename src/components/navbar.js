@@ -30,6 +30,9 @@ const myStyleMoon = {
         </li>
       </ul>
     </div>
+    <div>
+      <button onClick={props.toggleTheme} className='btn '>Button Theme</button>
+    </div>
     <div className="form-check form-switch order-1"> 
         <label class="btn-container me-5">
             <input checked="checked" type="checkbox" onClick={props.toggleMode}/>
