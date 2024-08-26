@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 
 export default function TextForm(props) {
   const [text, setText] = useState("");
-  console.log(props.theme)
   const textUp = () => {
   // console.log(text);
   let newText = text.toUpperCase();
