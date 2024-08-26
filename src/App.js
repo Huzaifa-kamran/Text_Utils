@@ -6,30 +6,12 @@ import Navbar from "./components/navbar";
 import TextForm from "./components/TextForm";
 function App() {
   const [mode, setMode] = useState("light");
-  // const [initheme,setTheme] = useState("info");
-
-  // const toggleTheme = () =>{
-  //   if (initheme === "info") {
-  //       setTheme("primary");
-  //   }else if(initheme === "primary"){
-  //     setTheme("warning");
-  //   }
-  //   else if(initheme === "warning"){
-  //     setTheme("danger");
-  //   }
-  //   else if(initheme === "danger"){
-  //     setTheme("success");
-  //   }
-  //   else if(initheme === "success"){
-  //     setTheme("info");
-  //   }
-  // }
-
+  
   const [initheme,setTheme] = useState("info");
   const themeChange = (theme) =>{
          setTheme(theme);
          document.documentElement.classList.add("active");
-         console.log(theme)
+        //  console.log(theme)
   }
 
   const toggleMode = () => {
@@ -43,7 +25,7 @@ function App() {
   };
   return (
     <BrowserRouter>
-      <Navbar title="Text Utils" mode={mode} toggleMode={toggleMode} toggleTheme={themeChange}/>
+      <Navbar title="Text Utils" mode={mode} toggleMode={toggleMode} toggleTheme={themeChange} btnCheck={initheme}/>
       
       <Routes>
         <Route

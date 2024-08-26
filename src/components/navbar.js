@@ -1,4 +1,4 @@
-import {React,useState} from 'react';
+import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
@@ -32,22 +32,18 @@ const myStyleMoon = {
         </li>
       </ul>
     </div>
-    <div>
-      <button onClick={props.toggleTheme} className='btn '>Button Theme</button>
-    </div>
           <div className="dropdown">
-        <button className="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-          Dropdown link
+        <button className="btn  btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          Change Button
         </button>
 
         <ul className="dropdown-menu">
           <li>
-            <button className='btn bg-primary theme-btn ms-1' onClick={props.toggleTheme} ></button>
-            <button className='btn bg-primary theme-btn ms-1' onClick={props.toggleTheme} ></button>
-            {/* <button className='btn bg-info theme-btn ms-1' onClick={themeChange("info")}></button> */}
-            {/* <button className='btn bg-warning theme-btn ms-1'  onClick={themeChange("warning")}></button> */}
-            {/* <button className='btn bg-success theme-btn ms-1'  onClick={themeChange("success")}></button> */}
-            {/* <button className='btn bg-danger theme-btn ms-1'  onClick={themeChange("success")} ></button> */}
+            <button className={`btn bg-info theme-btn ms-1 ${props.btnCheck === 'info'?'active':''}`} onClick={()=>props.toggleTheme('info')} ></button>
+            <button className={`btn bg-primary theme-btn ms-1 ${props.btnCheck === 'primary'?'active':''}`} onClick={()=>props.toggleTheme('primary')} ></button>
+            <button className={`btn bg-warning theme-btn ms-1 ${props.btnCheck === 'warning'?'active':''}`}  onClick={()=>props.toggleTheme("warning")}></button>
+            <button className={`btn bg-success theme-btn ms-1 ${props.btnCheck === 'success'?'active':''}`}  onClick={()=>props.toggleTheme("success")}></button>
+            <button className={`btn bg-danger theme-btn ms-1 ${props.btnCheck === 'danger'?'active':''}`}  onClick={()=>props.toggleTheme("danger")} ></button>
           </li>
           <li></li>
         </ul>
