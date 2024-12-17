@@ -11,7 +11,6 @@ function App() {
   const themeChange = (theme) =>{
          setTheme(theme);
          document.documentElement.classList.add("active");
-        //  console.log(theme)
   }
 
   const toggleMode = () => {
